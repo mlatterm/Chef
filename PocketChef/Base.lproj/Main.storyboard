@@ -67,19 +67,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfI-LM-ARh">
-                                <rect key="frame" x="103" y="265" width="101" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfI-LM-ARh">
+                                <rect key="frame" x="156.5" y="265" width="101" height="30"/>
                                 <state key="normal" title="Saved Recipes"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3n-3f-c5W">
-                                <rect key="frame" x="127" y="443" width="84" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3n-3f-c5W">
+                                <rect key="frame" x="165" y="443" width="84" height="30"/>
                                 <state key="normal" title="Grocery List"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NdV-Hp-zEh">
-                                <rect key="frame" x="204" y="648" width="64" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NdV-Hp-zEh">
+                                <rect key="frame" x="175" y="406" width="64" height="30"/>
                                 <state key="normal" title="Inventory"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="showDetail" id="aZv-D0-3Ic"/>
@@ -87,6 +84,12 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="NdV-Hp-zEh" firstAttribute="centerY" secondItem="zNu-aq-FB5" secondAttribute="centerY" id="9bA-Hy-E8b"/>
+                            <constraint firstItem="NdV-Hp-zEh" firstAttribute="centerX" secondItem="zNu-aq-FB5" secondAttribute="centerX" id="Myl-sr-1e1"/>
+                            <constraint firstItem="sfI-LM-ARh" firstAttribute="centerX" secondItem="zNu-aq-FB5" secondAttribute="centerX" id="Qke-93-vq8"/>
+                            <constraint firstItem="n3n-3f-c5W" firstAttribute="centerX" secondItem="zNu-aq-FB5" secondAttribute="centerX" id="u8V-sy-Cv3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Qg6-V1-SoN"/>
                     </view>
                 </viewController>
@@ -132,6 +135,9 @@
                                 <rect key="frame" x="358" y="30" width="36" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Add"/>
+                                <connections>
+                                    <segue destination="IVQ-Ty-kXp" kind="show" id="3vN-72-TJB"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Q61-ev-3HB">
                                 <rect key="frame" x="20" y="137" width="374" height="725"/>
@@ -177,10 +183,62 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="9dg-4q-3gA"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="419" y="-159"/>
         </scene>
+        <!--AddViewPantry-->
+        <scene sceneID="zXP-cw-wdz">
+            <objects>
+                <viewController title="AddViewPantry" id="IVQ-Ty-kXp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zna-8t-C9m">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="idu-yj-CiF">
+                                <rect key="frame" x="141" y="191" width="132" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HI8-UP-KYB">
+                                <rect key="frame" x="141" y="247" width="132" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Ingredient" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t0M-kd-Gsy">
+                                <rect key="frame" x="141" y="134" width="132" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tjc-fL-CYN">
+                                <rect key="frame" x="334" y="17" width="47" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="ll1-PK-3Ou"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="idu-yj-CiF" firstAttribute="leading" secondItem="t0M-kd-Gsy" secondAttribute="leading" id="86P-k6-0gK"/>
+                            <constraint firstItem="idu-yj-CiF" firstAttribute="top" secondItem="t0M-kd-Gsy" secondAttribute="bottom" constant="30" id="SWU-aC-yzg"/>
+                            <constraint firstItem="idu-yj-CiF" firstAttribute="trailing" secondItem="t0M-kd-Gsy" secondAttribute="trailing" id="eQK-0n-vNE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fYh-Jr-N7c"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="VPw-vl-Mb7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uNJ-zs-4sz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1271.0144927536232" y="-291.29464285714283"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ll1-PK-3Ou"/>
+    </inferredMetricsTieBreakers>
 </document>
