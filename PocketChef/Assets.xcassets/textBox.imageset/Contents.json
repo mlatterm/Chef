@@ -1,16 +1,16 @@
 {
   "images" : [
     {
-      "filename" : "textBox.png",
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "1x"
     },
     {
-      "idiom" : "universal",
+      "filename" : "textBox.png",
+      "idiom" : "iphone",
       "scale" : "2x"
     },
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "3x"
     }
   ],
