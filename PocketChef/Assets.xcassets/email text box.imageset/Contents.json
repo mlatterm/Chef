@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "email text box 1x.png",
       "idiom" : "iphone",
       "scale" : "1x"
     },
@@ -10,6 +11,7 @@
       "scale" : "2x"
     },
     {
+      "filename" : "email text box 3x.png",
       "idiom" : "iphone",
       "scale" : "3x"
     }

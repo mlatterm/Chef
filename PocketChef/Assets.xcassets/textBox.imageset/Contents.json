@@ -1,15 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "text box 1x.png",
       "idiom" : "iphone",
       "scale" : "1x"
     },
     {
-      "filename" : "textBox.png",
+      "filename" : "text box.png",
       "idiom" : "iphone",
       "scale" : "2x"
     },
     {
+      "filename" : "text box 3x.png",
       "idiom" : "iphone",
       "scale" : "3x"
     }

@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "g list tab 1x.png",
       "idiom" : "iphone",
       "scale" : "1x"
     },
@@ -10,6 +11,7 @@
       "scale" : "2x"
     },
     {
+      "filename" : "grocery list tab 3x.png",
       "idiom" : "iphone",
       "scale" : "3x"
     }
