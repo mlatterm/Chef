@@ -19,8 +19,12 @@
                                 <rect key="frame" x="-68" y="-22" width="548" height="937"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcu-uM-f68">
-                                <rect key="frame" x="72" y="639" width="270" height="57"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcu-uM-f68">
+                                <rect key="frame" x="72" y="639" width="271" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="270" id="ag0-Sf-5gV"/>
+                                    <constraint firstAttribute="height" constant="57" id="rHA-B9-SPY"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Sign In" backgroundImage="button1">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -29,9 +33,12 @@
                                     <segue destination="AmK-vI-afy" kind="show" id="1K9-MX-2qo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCu-tC-OyW">
-                                <rect key="frame" x="73" y="704" width="270" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCu-tC-OyW">
+                                <rect key="frame" x="72" y="704" width="271" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="270" id="3ht-2W-65f"/>
+                                    <constraint firstAttribute="height" constant="57" id="KN4-sS-SCr"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Sign Up" backgroundImage="button1">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -40,33 +47,51 @@
                                     <segue destination="a1E-YL-OUe" kind="show" id="cWJ-XP-f2S"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" background="textBox" translatesAutoresizingMaskIntoConstraints="NO" id="crh-ps-Srd">
-                                <rect key="frame" x="35" y="493" width="345" height="69"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" background="textBox" translatesAutoresizingMaskIntoConstraints="NO" id="crh-ps-Srd">
+                                <rect key="frame" x="32.5" y="494" width="350" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="2JX-QR-2lZ"/>
+                                    <constraint firstAttribute="width" constant="350" id="2JX-QR-2lZ"/>
+                                    <constraint firstAttribute="height" constant="70" id="e13-cZ-wPU"/>
                                 </constraints>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="R8G-22-mwZ">
-                                <rect key="frame" x="81" y="88" width="251" height="246"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="R8G-22-mwZ">
+                                <rect key="frame" x="82" y="88" width="251" height="246"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="251" id="Afh-xQ-LQZ"/>
+                                    <constraint firstAttribute="height" constant="246" id="xTF-kk-HR3"/>
+                                </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="17" background="textBox" translatesAutoresizingMaskIntoConstraints="NO" id="UYq-j8-Hvv" userLabel="Username">
-                                <rect key="frame" x="36" y="416" width="345" height="69"/>
+                                <rect key="frame" x="36" y="416" width="345" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="AWT-k7-xiD"/>
+                                    <constraint firstAttribute="width" constant="350" id="AWT-k7-xiD"/>
+                                    <constraint firstAttribute="height" constant="70" id="MFN-9Z-g4l"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="mcu-uM-f68" firstAttribute="bottom" secondItem="n8K-iA-95h" secondAttribute="bottom" constant="-200" id="0jR-6K-3bo"/>
+                            <constraint firstItem="mcu-uM-f68" firstAttribute="top" secondItem="crh-ps-Srd" secondAttribute="bottom" constant="75" id="3y6-Oh-FXY"/>
                             <constraint firstItem="mcu-uM-f68" firstAttribute="centerX" secondItem="niZ-eG-Si0" secondAttribute="centerX" id="4DO-mJ-cuq"/>
+                            <constraint firstItem="mcu-uM-f68" firstAttribute="leading" secondItem="n8K-iA-95h" secondAttribute="leading" constant="72" id="5fH-P6-Lgp"/>
                             <constraint firstItem="crh-ps-Srd" firstAttribute="centerX" secondItem="niZ-eG-Si0" secondAttribute="centerX" id="HlP-AI-ca9"/>
+                            <constraint firstItem="HCu-tC-OyW" firstAttribute="leading" secondItem="n8K-iA-95h" secondAttribute="leading" constant="72" id="KNz-Lr-fWu"/>
+                            <constraint firstItem="R8G-22-mwZ" firstAttribute="top" secondItem="n8K-iA-95h" secondAttribute="top" constant="44" id="KiC-dN-diU"/>
+                            <constraint firstItem="n8K-iA-95h" firstAttribute="trailing" secondItem="mcu-uM-f68" secondAttribute="trailing" constant="72" id="MNk-BE-Viq"/>
+                            <constraint firstItem="UYq-j8-Hvv" firstAttribute="top" secondItem="R8G-22-mwZ" secondAttribute="bottom" constant="82" id="WoK-h1-jpE"/>
+                            <constraint firstItem="R8G-22-mwZ" firstAttribute="leading" secondItem="n8K-iA-95h" secondAttribute="leading" constant="82" id="XZn-Y8-XbU"/>
+                            <constraint firstItem="HCu-tC-OyW" firstAttribute="top" secondItem="mcu-uM-f68" secondAttribute="bottom" constant="8" id="Xli-Ip-sZX"/>
+                            <constraint firstItem="UYq-j8-Hvv" firstAttribute="top" secondItem="R8G-22-mwZ" secondAttribute="bottom" constant="82" id="Xy8-CO-P9p"/>
+                            <constraint firstItem="n8K-iA-95h" firstAttribute="trailing" secondItem="R8G-22-mwZ" secondAttribute="trailing" constant="82" id="ZFI-Qk-2iV"/>
+                            <constraint firstItem="n8K-iA-95h" firstAttribute="trailing" secondItem="HCu-tC-OyW" secondAttribute="trailing" constant="72" id="g9K-cF-mV7"/>
+                            <constraint firstItem="crh-ps-Srd" firstAttribute="top" secondItem="UYq-j8-Hvv" secondAttribute="bottom" constant="8" id="mI8-oZ-kry"/>
+                            <constraint firstItem="HCu-tC-OyW" firstAttribute="top" secondItem="mcu-uM-f68" secondAttribute="bottom" constant="8" id="vvz-gv-tP2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="n8K-iA-95h"/>
                     </view>
@@ -74,7 +99,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TpR-qo-fNZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2136" y="-136"/>
+            <point key="canvasLocation" x="-2136.231884057971" y="-136.60714285714286"/>
         </scene>
         <!--Sign Up-->
         <scene sceneID="OIh-lo-Jlo">
@@ -125,7 +150,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="klX-EG-snD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1297" y="-479"/>
+            <point key="canvasLocation" x="-1296" y="205"/>
         </scene>
         <!--Main-->
         <scene sceneID="KhW-vj-Vt5">
