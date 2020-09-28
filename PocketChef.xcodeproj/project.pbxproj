@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		521DD8A02522576C00A741EB /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521DD89F2522576C00A741EB /* Auth.storyboard */; };
 		52AA2A212518EA7200C25FCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA2A202518EA7200C25FCE /* AppDelegate.swift */; };
 		52AA2A232518EA7200C25FCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA2A222518EA7200C25FCE /* SceneDelegate.swift */; };
 		52AA2A252518EA7200C25FCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA2A242518EA7200C25FCE /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		521DD89F2522576C00A741EB /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		52AA2A1D2518EA7200C25FCE /* PocketChef.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketChef.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52AA2A202518EA7200C25FCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52AA2A222518EA7200C25FCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				52AA2A292518EA7900C25FCE /* Assets.xcassets */,
 				52AA2A2B2518EA7900C25FCE /* LaunchScreen.storyboard */,
 				52AA2A2E2518EA7900C25FCE /* Info.plist */,
+				521DD89F2522576C00A741EB /* Auth.storyboard */,
 			);
 			path = PocketChef;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				521DD8A02522576C00A741EB /* Auth.storyboard in Resources */,
 				52AA2A2D2518EA7900C25FCE /* LaunchScreen.storyboard in Resources */,
 				52AA2A2A2518EA7900C25FCE /* Assets.xcassets in Resources */,
 				52AA2A282518EA7200C25FCE /* Main.storyboard in Resources */,
