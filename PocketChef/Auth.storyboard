@@ -20,7 +20,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcu-uM-f68">
-                                <rect key="frame" x="72" y="639" width="271" height="57"/>
+                                <rect key="frame" x="72" y="638.5" width="271" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="270" id="ag0-Sf-5gV"/>
                                     <constraint firstAttribute="height" constant="57" id="rHA-B9-SPY"/>
@@ -34,7 +34,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCu-tC-OyW">
-                                <rect key="frame" x="72" y="704" width="271" height="57"/>
+                                <rect key="frame" x="72" y="703.5" width="271" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="270" id="3ht-2W-65f"/>
                                     <constraint firstAttribute="height" constant="57" id="KN4-sS-SCr"/>
@@ -48,7 +48,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" background="textBox" translatesAutoresizingMaskIntoConstraints="NO" id="crh-ps-Srd">
-                                <rect key="frame" x="32.5" y="494" width="350" height="70"/>
+                                <rect key="frame" x="32.5" y="493.5" width="350" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="2JX-QR-2lZ"/>
                                     <constraint firstAttribute="height" constant="70" id="e13-cZ-wPU"/>
@@ -58,14 +58,14 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="R8G-22-mwZ">
-                                <rect key="frame" x="82" y="88" width="251" height="246"/>
+                                <rect key="frame" x="82" y="88" width="251" height="245.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="251" id="Afh-xQ-LQZ"/>
                                     <constraint firstAttribute="height" constant="246" id="xTF-kk-HR3"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="17" background="textBox" translatesAutoresizingMaskIntoConstraints="NO" id="UYq-j8-Hvv" userLabel="Username">
-                                <rect key="frame" x="36" y="416" width="345" height="70"/>
+                                <rect key="frame" x="36" y="415.5" width="345" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="AWT-k7-xiD"/>
                                     <constraint firstAttribute="height" constant="70" id="MFN-9Z-g4l"/>
@@ -164,7 +164,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="SIt-mY-akZ"/>
+        <segue reference="1K9-MX-2qo"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="MarbleBG" width="772" height="1319"/>
