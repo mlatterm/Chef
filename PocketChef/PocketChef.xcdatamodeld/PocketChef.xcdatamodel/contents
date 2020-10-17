@@ -12,6 +12,11 @@
         <attribute name="weight" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="weightMeasure" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="Liquid" representedClassName="Liquid" syncable="YES" codeGenerationType="class">
+        <attribute name="amount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="amountUnit" optional="YES" attributeType="String"/>
+        <attribute name="ingrName" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="Meat" representedClassName="Meat" syncable="YES" codeGenerationType="class">
         <attribute name="animalName" optional="YES" attributeType="String"/>
         <attribute name="cut" optional="YES" attributeType="String"/>
@@ -41,5 +46,6 @@
         <element name="Seasoning" positionX="36" positionY="126" width="128" height="88"/>
         <element name="Bread" positionX="0" positionY="90" width="128" height="88"/>
         <element name="Other" positionX="9" positionY="99" width="128" height="88"/>
+        <element name="Liquid" positionX="18" positionY="108" width="128" height="88"/>
     </elements>
 </model>
