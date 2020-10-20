@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gNU-pl-eIO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gNU-pl-eIO">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -34,9 +34,6 @@
                                 <state key="normal" backgroundImage="my pantry tab">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="aZv-D0-3Ic"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3n-3f-c5W">
                                 <rect key="frame" x="340" y="150" width="74" height="163"/>
@@ -183,7 +180,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Pantry" id="9dg-4q-3gA">
+                    <navigationItem key="navigationItem" title="Pantry" largeTitleDisplayMode="always" id="9dg-4q-3gA">
                         <barButtonItem key="backBarButtonItem" title="Done" id="llm-PR-Ek7"/>
                         <rightBarButtonItems>
                             <barButtonItem style="plain" systemItem="add" id="LNu-Fs-bQ7">
@@ -294,11 +291,11 @@
             <objects>
                 <viewController id="sQK-iu-H7L" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sRm-Og-mbp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PBH-SR-vfJ">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="sQK-iu-H7L" id="dOr-gu-rCO"/>
@@ -374,17 +371,17 @@
             </objects>
             <point key="canvasLocation" x="251" y="-145"/>
         </scene>
-        <!--Settings-->
+        <!--Pantry-->
         <scene sceneID="f5e-gA-M7S">
             <objects>
-                <navigationController title="Settings" id="RP1-GZ-2Dv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="uQW-uW-VMI"/>
+                <navigationController title="Pantry" id="RP1-GZ-2Dv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Pantry" image="table" catalog="system" id="uQW-uW-VMI"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="MwV-Mf-Cr1">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="NB2-Gi-bxA" kind="relationship" relationship="rootViewController" id="i1E-mY-caL"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="od7-w4-Wa1"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ku6-JR-jYJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -395,7 +392,7 @@
         <scene sceneID="a1z-re-alu">
             <objects>
                 <navigationController title="Kitchen" automaticallyAdjustsScrollViewInsets="NO" id="SNl-5g-1wO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="fXY-Kx-Fcf"/>
+                    <tabBarItem key="tabBarItem" title="Kitchen" image="house" catalog="system" id="fXY-Kx-Fcf"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="6MZ-xq-dX8"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="r5i-2c-GzF">
@@ -416,7 +413,7 @@
         <scene sceneID="qzL-m5-btc">
             <objects>
                 <navigationController title="Recipes" id="Ym2-O1-2GW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="WpS-wK-2m1"/>
+                    <tabBarItem key="tabBarItem" title="Recipes" image="book" catalog="system" id="WpS-wK-2m1"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="kv2-K9-Kdb">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -433,7 +430,7 @@
         <scene sceneID="2Ha-2f-1eV">
             <objects>
                 <navigationController title="Grocery List" id="0uK-DX-LGH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="yNB-8G-xlT"/>
+                    <tabBarItem key="tabBarItem" title="Grocery List" image="list.bullet" catalog="system" id="yNB-8G-xlT"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="sAo-95-bmZ">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -459,7 +456,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="La6-Kq-IRL">
-                                <rect key="frame" x="72" y="735" width="270" height="57"/>
+                                <rect key="frame" x="72" y="643" width="270" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="TSh-Me-UpL"/>
                                 </constraints>
@@ -469,7 +466,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PYY-rV-T6M">
-                                <rect key="frame" x="72" y="800" width="270" height="57"/>
+                                <rect key="frame" x="72" y="708" width="270" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="vIx-hk-Cdm"/>
                                 </constraints>
@@ -481,8 +478,8 @@
                                     <segue destination="9w6-iK-apu" kind="showDetail" id="V2g-Ji-emH"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" background="textBox" translatesAutoresizingMaskIntoConstraints="NO" id="aea-ax-ISh">
-                                <rect key="frame" x="32" y="590" width="350" height="70"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" background="textBox" translatesAutoresizingMaskIntoConstraints="NO" id="aea-ax-ISh">
+                                <rect key="frame" x="32" y="543" width="350" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="3fg-v6-10W"/>
                                     <constraint firstAttribute="width" constant="350" id="ma3-OJ-xTS"/>
@@ -492,20 +489,20 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Vck-cR-hPR">
-                                <rect key="frame" x="81.5" y="184" width="251" height="246"/>
+                                <rect key="frame" x="81.5" y="174" width="251" height="246"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="251" id="Mok-bm-z6c"/>
                                     <constraint firstAttribute="height" constant="246" id="e2L-j4-oAG"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="17" background="textBox" translatesAutoresizingMaskIntoConstraints="NO" id="38x-kQ-r0e" userLabel="Username">
-                                <rect key="frame" x="32" y="512" width="350" height="70"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" background="textBox" translatesAutoresizingMaskIntoConstraints="NO" id="38x-kQ-r0e" userLabel="Username">
+                                <rect key="frame" x="32" y="465" width="350" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="bxt-aY-xzz"/>
                                     <constraint firstAttribute="width" constant="350" id="lgR-dT-x9y"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="u84-fe-Q7e"/>
@@ -519,10 +516,10 @@
                             <constraint firstItem="aea-ax-ISh" firstAttribute="centerX" secondItem="gLq-eI-lAI" secondAttribute="centerX" id="QEU-fd-OL3"/>
                             <constraint firstItem="PYY-rV-T6M" firstAttribute="top" secondItem="La6-Kq-IRL" secondAttribute="bottom" constant="8" id="aTd-Wf-54D"/>
                             <constraint firstItem="Vck-cR-hPR" firstAttribute="centerX" secondItem="gLq-eI-lAI" secondAttribute="centerX" id="coC-Ev-aPE"/>
-                            <constraint firstItem="La6-Kq-IRL" firstAttribute="top" secondItem="aea-ax-ISh" secondAttribute="bottom" constant="75" id="eui-cN-Tu1"/>
-                            <constraint firstItem="38x-kQ-r0e" firstAttribute="top" secondItem="Vck-cR-hPR" secondAttribute="bottom" constant="82" id="isw-DY-5N2"/>
+                            <constraint firstItem="La6-Kq-IRL" firstAttribute="top" secondItem="aea-ax-ISh" secondAttribute="bottom" constant="30" id="eui-cN-Tu1"/>
+                            <constraint firstItem="38x-kQ-r0e" firstAttribute="top" secondItem="Vck-cR-hPR" secondAttribute="bottom" constant="45" id="isw-DY-5N2"/>
                             <constraint firstItem="La6-Kq-IRL" firstAttribute="leading" secondItem="u84-fe-Q7e" secondAttribute="leading" constant="72" id="lMC-s3-GYc"/>
-                            <constraint firstItem="Vck-cR-hPR" firstAttribute="top" secondItem="u84-fe-Q7e" secondAttribute="top" constant="44" id="sO1-Gu-jyN"/>
+                            <constraint firstItem="Vck-cR-hPR" firstAttribute="top" secondItem="u84-fe-Q7e" secondAttribute="top" constant="34" id="sO1-Gu-jyN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1gc-Oj-dyM"/>
@@ -539,6 +536,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="MarbleBG" translatesAutoresizingMaskIntoConstraints="NO" id="mwp-Jp-L6Y">
+                                <rect key="frame" x="-46" y="-47" width="548" height="937"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7BM-Hc-xLK">
                                 <rect key="frame" x="143" y="354" width="128" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -585,18 +586,20 @@
             <point key="canvasLocation" x="4901" y="-863"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="igI-ja-tZx"/>
-    </inferredMetricsTieBreakers>
+    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="MarbleBG" width="772" height="1319"/>
+        <image name="book" catalog="system" width="128" height="102"/>
         <image name="button1" width="376" height="76.5"/>
         <image name="gear" catalog="system" width="128" height="119"/>
         <image name="grocery list tab" width="421" height="907.5"/>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="logo" width="250.5" height="245.5"/>
         <image name="my pantry tab" width="201.5" height="435"/>
         <image name="my recipes tab" width="421" height="907.5"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="table" catalog="system" width="128" height="93"/>
         <image name="textBox" width="503" height="103"/>
         <systemColor name="darkTextColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
