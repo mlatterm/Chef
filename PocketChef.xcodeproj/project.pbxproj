@@ -17,6 +17,7 @@
 		52AA2A2D2518EA7900C25FCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AA2A2B2518EA7900C25FCE /* LaunchScreen.storyboard */; };
 		52AA2A382518EA7900C25FCE /* PocketChefTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA2A372518EA7900C25FCE /* PocketChefTests.swift */; };
 		52AA2A432518EA7900C25FCE /* PocketChefUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA2A422518EA7900C25FCE /* PocketChefUITests.swift */; };
+		F45370E7253E5D4000ADD9DC /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45370E6253E5D4000ADD9DC /* UserViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		52AA2A3E2518EA7900C25FCE /* PocketChefUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketChefUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52AA2A422518EA7900C25FCE /* PocketChefUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketChefUITests.swift; sourceTree = "<group>"; };
 		52AA2A442518EA7900C25FCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F45370E6253E5D4000ADD9DC /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				52506266252BA7ED0051E3D3 /* PocketChef.xcdatamodeld */,
 				52AA2A222518EA7200C25FCE /* SceneDelegate.swift */,
 				52AA2A242518EA7200C25FCE /* ViewController.swift */,
+				F45370E6253E5D4000ADD9DC /* UserViewController.swift */,
 				52AA2A262518EA7200C25FCE /* Main.storyboard */,
 				52AA2A292518EA7900C25FCE /* Assets.xcassets */,
 				52AA2A2B2518EA7900C25FCE /* LaunchScreen.storyboard */,
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52AA2A252518EA7200C25FCE /* ViewController.swift in Sources */,
+				F45370E7253E5D4000ADD9DC /* UserViewController.swift in Sources */,
 				52AA2A212518EA7200C25FCE /* AppDelegate.swift in Sources */,
 				52AA2A232518EA7200C25FCE /* SceneDelegate.swift in Sources */,
 				52506268252BA7ED0051E3D3 /* PocketChef.xcdatamodeld in Sources */,
