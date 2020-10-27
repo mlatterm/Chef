@@ -189,6 +189,11 @@
                                 </connections>
                             </barButtonItem>
                             <barButtonItem style="plain" systemItem="edit" id="Sft-Gy-U1g"/>
+                            <barButtonItem image="plus.app" catalog="system" id="Kst-Q6-Jyc">
+                                <connections>
+                                    <segue destination="IVQ-Ty-kXp" kind="show" id="RaX-Ef-bqP"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -236,7 +241,7 @@
         <!--AddViewPantry-->
         <scene sceneID="zXP-cw-wdz">
             <objects>
-                <viewController title="AddViewPantry" id="IVQ-Ty-kXp" sceneMemberID="viewController">
+                <viewController title="AddViewPantry" id="IVQ-Ty-kXp" customClass="AddPantryViewController" customModule="PocketChef" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zna-8t-C9m">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -269,7 +274,7 @@
                                 </state>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tP8-xQ-oI6">
-                                <rect key="frame" x="0.0" y="622" width="414" height="240"/>
+                                <rect key="frame" x="0.0" y="573" width="414" height="240"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                         </subviews>
@@ -285,6 +290,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="VPw-vl-Mb7"/>
+                    <connections>
+                        <outlet property="picker" destination="tP8-xQ-oI6" id="9pC-DN-Wsd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uNJ-zs-4sz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -603,6 +611,7 @@
         <image name="my pantry tab" width="201.5" height="435"/>
         <image name="my recipes tab" width="421" height="907.5"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="plus.app" catalog="system" width="128" height="114"/>
         <image name="table" catalog="system" width="128" height="93"/>
         <image name="textBox" width="503" height="103"/>
         <systemColor name="darkTextColor">
