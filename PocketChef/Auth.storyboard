@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,7 +22,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcu-uM-f68">
-                                <rect key="frame" x="72" y="638.5" width="271" height="57"/>
+                                <rect key="frame" x="72" y="638.5" width="270" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="270" id="ag0-Sf-5gV"/>
                                     <constraint firstAttribute="height" constant="57" id="rHA-B9-SPY"/>
@@ -36,9 +36,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCu-tC-OyW">
-                                <rect key="frame" x="72" y="703.5" width="271" height="57"/>
+                                <rect key="frame" x="72" y="703.5" width="270" height="57"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="270" id="3ht-2W-65f"/>
                                     <constraint firstAttribute="height" constant="57" id="KN4-sS-SCr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -50,7 +49,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" background="textBox" translatesAutoresizingMaskIntoConstraints="NO" id="crh-ps-Srd">
-                                <rect key="frame" x="32.5" y="493.5" width="350" height="70"/>
+                                <rect key="frame" x="32" y="493.5" width="350" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="2JX-QR-2lZ"/>
                                     <constraint firstAttribute="height" constant="70" id="e13-cZ-wPU"/>
@@ -66,8 +65,8 @@
                                     <constraint firstAttribute="height" constant="246" id="xTF-kk-HR3"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="17" background="textBox" translatesAutoresizingMaskIntoConstraints="NO" id="UYq-j8-Hvv" userLabel="Username">
-                                <rect key="frame" x="36" y="415.5" width="345" height="70"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="17" background="textBox" translatesAutoresizingMaskIntoConstraints="NO" id="UYq-j8-Hvv" userLabel="Username">
+                                <rect key="frame" x="36" y="415.5" width="350" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="AWT-k7-xiD"/>
                                     <constraint firstAttribute="height" constant="70" id="MFN-9Z-g4l"/>
@@ -83,17 +82,17 @@
                             <constraint firstItem="mcu-uM-f68" firstAttribute="top" secondItem="crh-ps-Srd" secondAttribute="bottom" constant="75" id="3y6-Oh-FXY"/>
                             <constraint firstItem="mcu-uM-f68" firstAttribute="centerX" secondItem="niZ-eG-Si0" secondAttribute="centerX" id="4DO-mJ-cuq"/>
                             <constraint firstItem="mcu-uM-f68" firstAttribute="leading" secondItem="n8K-iA-95h" secondAttribute="leading" constant="72" id="5fH-P6-Lgp"/>
+                            <constraint firstItem="UYq-j8-Hvv" firstAttribute="leading" secondItem="n8K-iA-95h" secondAttribute="leading" constant="36" id="Cs9-kG-i2E"/>
                             <constraint firstItem="crh-ps-Srd" firstAttribute="centerX" secondItem="niZ-eG-Si0" secondAttribute="centerX" id="HlP-AI-ca9"/>
                             <constraint firstItem="HCu-tC-OyW" firstAttribute="leading" secondItem="n8K-iA-95h" secondAttribute="leading" constant="72" id="KNz-Lr-fWu"/>
                             <constraint firstItem="R8G-22-mwZ" firstAttribute="top" secondItem="n8K-iA-95h" secondAttribute="top" constant="44" id="KiC-dN-diU"/>
-                            <constraint firstItem="n8K-iA-95h" firstAttribute="trailing" secondItem="mcu-uM-f68" secondAttribute="trailing" constant="72" id="MNk-BE-Viq"/>
                             <constraint firstItem="UYq-j8-Hvv" firstAttribute="top" secondItem="R8G-22-mwZ" secondAttribute="bottom" constant="82" id="WoK-h1-jpE"/>
                             <constraint firstItem="R8G-22-mwZ" firstAttribute="leading" secondItem="n8K-iA-95h" secondAttribute="leading" constant="82" id="XZn-Y8-XbU"/>
                             <constraint firstItem="HCu-tC-OyW" firstAttribute="top" secondItem="mcu-uM-f68" secondAttribute="bottom" constant="8" id="Xli-Ip-sZX"/>
                             <constraint firstItem="UYq-j8-Hvv" firstAttribute="top" secondItem="R8G-22-mwZ" secondAttribute="bottom" constant="82" id="Xy8-CO-P9p"/>
-                            <constraint firstItem="n8K-iA-95h" firstAttribute="trailing" secondItem="R8G-22-mwZ" secondAttribute="trailing" constant="82" id="ZFI-Qk-2iV"/>
                             <constraint firstItem="n8K-iA-95h" firstAttribute="trailing" secondItem="HCu-tC-OyW" secondAttribute="trailing" constant="72" id="g9K-cF-mV7"/>
                             <constraint firstItem="crh-ps-Srd" firstAttribute="top" secondItem="UYq-j8-Hvv" secondAttribute="bottom" constant="8" id="mI8-oZ-kry"/>
+                            <constraint firstItem="UYq-j8-Hvv" firstAttribute="top" secondItem="niZ-eG-Si0" secondAttribute="top" constant="382" id="muH-aW-jFP"/>
                             <constraint firstItem="HCu-tC-OyW" firstAttribute="top" secondItem="mcu-uM-f68" secondAttribute="bottom" constant="8" id="vvz-gv-tP2"/>
                         </constraints>
                     </view>

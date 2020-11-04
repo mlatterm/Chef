@@ -9,17 +9,17 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController {
+class RecipesViewCtrl: UIViewController {
 
-    @IBOutlet weak var tblView: UITableView!
+    @IBOutlet weak var table: UITableView!
     
-    var ingredients: [NSManagedObject] = []
+    var recipes: [NSManagedObject] = []
     
     override func viewDidLoad() {
       super.viewDidLoad()
       
-      title = "My Pantry"
-      tblView.register(UITableViewCell.self,
+      title = "Recipes"
+      table.register(UITableViewCell.self,
         forCellReuseIdentifier: "Cell")
     }
     
@@ -35,33 +35,32 @@ class ViewController: UIViewController {
         appDelegate.persistentContainer.viewContext
 
       let fetchRequest =
-        NSFetchRequest<NSManagedObject>(entityName: "Ingredient")
+        NSFetchRequest<NSManagedObject>(entityName: "Recipes")
       
       do {
-        ingredients = try managedContext.fetch(fetchRequest)
+        recipes = try managedContext.fetch(fetchRequest)
       } catch let error as NSError {
         print("Could not fetch. \(error), \(error.userInfo)")
       }
     }
 
-    
-    // Implement the addName IBAction
-    @IBAction func addIngredient(_ sender: UIBarButtonItem) {
+  // Implement the addName IBAction
+    @IBAction func addRecipe(_ sender: UIBarButtonItem) {
       
-      let alert = UIAlertController(title: "New Ingredient",
-                                    message: "Add a new ingredient",
+      let alert = UIAlertController(title: "New Recipe",
+                                    message: "Enter name of a new Recipe",
                                     preferredStyle: .alert)
       
         let saveAction = UIAlertAction(title: "Save", style: .default) {
           [unowned self] action in
           
           guard let textField = alert.textFields?.first,
-            let ingredientToSave = textField.text else {
+            let recipeToSave = textField.text else {
               return
           }
           
-          self.save(name: ingredientToSave)
-          self.tblView.reloadData()
+          self.save(name: recipeToSave)
+          self.table.reloadData()
         }
       
       let cancelAction = UIAlertAction(title: "Cancel",
@@ -86,7 +85,7 @@ class ViewController: UIViewController {
         appDelegate.persistentContainer.viewContext
       
       let entity =
-        NSEntityDescription.entity(forEntityName: "Ingredient",
+        NSEntityDescription.entity(forEntityName: "Recipes",
                                    in: managedContext)!
       
       let ingr = NSManagedObject(entity: entity,
@@ -96,7 +95,7 @@ class ViewController: UIViewController {
       
       do {
         try managedContext.save()
-        ingredients.append(ingr)
+        recipes.append(ingr)
       } catch let error as NSError {
         print("Could not save. \(error), \(error.userInfo)")
       }
@@ -106,17 +105,17 @@ class ViewController: UIViewController {
 }
 
 // MARK: - UITableViewDataSource
-extension ViewController: UITableViewDataSource {
+extension RecipesViewCtrl: UITableViewDataSource {
   func tableView(_ tableView: UITableView,
                  numberOfRowsInSection section: Int) -> Int {
-    return ingredients.count
+    return recipes.count
   }
 
   func tableView(_ tableView: UITableView,
                  cellForRowAt indexPath: IndexPath)
                  -> UITableViewCell {
 
-    let Ingredient = ingredients[indexPath.row]
+    let Ingredient = recipes[indexPath.row]
     let cell =
       tableView.dequeueReusableCell(withIdentifier: "Cell",
                                     for: indexPath)
@@ -125,5 +124,3 @@ extension ViewController: UITableViewDataSource {
     return cell
   }
 }
-
-

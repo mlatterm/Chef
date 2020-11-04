@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		521DD8A02522576C00A741EB /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521DD89F2522576C00A741EB /* Auth.storyboard */; };
 		52506268252BA7ED0051E3D3 /* PocketChef.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52506266252BA7ED0051E3D3 /* PocketChef.xcdatamodeld */; };
+		527F74B32551B041002C8115 /* SwiftUIFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527F74B22551B041002C8115 /* SwiftUIFile.swift */; };
+		527F74CB2551B115002C8115 /* RecipesViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527F74CA2551B115002C8115 /* RecipesViewCtrl.swift */; };
 		52AA2A212518EA7200C25FCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA2A202518EA7200C25FCE /* AppDelegate.swift */; };
 		52AA2A232518EA7200C25FCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA2A222518EA7200C25FCE /* SceneDelegate.swift */; };
 		52AA2A252518EA7200C25FCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA2A242518EA7200C25FCE /* ViewController.swift */; };
@@ -42,6 +44,8 @@
 /* Begin PBXFileReference section */
 		521DD89F2522576C00A741EB /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		52506267252BA7ED0051E3D3 /* PocketChef.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PocketChef.xcdatamodel; sourceTree = "<group>"; };
+		527F74B22551B041002C8115 /* SwiftUIFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIFile.swift; sourceTree = "<group>"; };
+		527F74CA2551B115002C8115 /* RecipesViewCtrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewCtrl.swift; sourceTree = "<group>"; };
 		52AA2A1D2518EA7200C25FCE /* PocketChef.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketChef.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52AA2A202518EA7200C25FCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52AA2A222518EA7200C25FCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 				52506266252BA7ED0051E3D3 /* PocketChef.xcdatamodeld */,
 				52AA2A222518EA7200C25FCE /* SceneDelegate.swift */,
 				52AA2A242518EA7200C25FCE /* ViewController.swift */,
+				527F74CA2551B115002C8115 /* RecipesViewCtrl.swift */,
 				F4657BD7254BA5E3001BB299 /* ViewController3.swift */,
 				52D4C6CA25470DC1004E5D1F /* AddPantryViewController.swift */,
 				F45370E6253E5D4000ADD9DC /* UserViewController.swift */,
@@ -121,6 +126,7 @@
 				52AA2A2B2518EA7900C25FCE /* LaunchScreen.storyboard */,
 				52AA2A2E2518EA7900C25FCE /* Info.plist */,
 				521DD89F2522576C00A741EB /* Auth.storyboard */,
+				527F74B22551B041002C8115 /* SwiftUIFile.swift */,
 			);
 			path = PocketChef;
 			sourceTree = "<group>";
@@ -275,7 +281,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				527F74B32551B041002C8115 /* SwiftUIFile.swift in Sources */,
 				52AA2A252518EA7200C25FCE /* ViewController.swift in Sources */,
+				527F74CB2551B115002C8115 /* RecipesViewCtrl.swift in Sources */,
 				F45370E7253E5D4000ADD9DC /* UserViewController.swift in Sources */,
 				52D4C6CB25470DC2004E5D1F /* AddPantryViewController.swift in Sources */,
 				52AA2A212518EA7200C25FCE /* AppDelegate.swift in Sources */,
