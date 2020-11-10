@@ -61,6 +61,8 @@ struct RecipeCardView: View {
             
             .font(.footnote)
             .foregroundColor(Color.gray)
+            
+            
         }
         .padding()
         .padding(.bottom, 12)
