@@ -13,10 +13,10 @@ import SwiftUI
 let recipesData: [Recipe] = [
 Recipe (
   title: "John’s Dank Egg Salad Recipe",
-  headline: "egg salad has never been easier!",
+  headline: "Delicious egg salad made easy!",
   image: "egg-saladSandwich",
   rating: 5,
-  serves: 4,
+  serves: 5,
   prepTime: 30,
   cookTime: 16,
   instructions: [
