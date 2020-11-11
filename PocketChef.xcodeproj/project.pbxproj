@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47230434255B4EB500716EBE /* RecipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47230433255B4EB500716EBE /* RecipeCardView.swift */; };
+		4794F120255B1097009DD349 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794F11F255B1097009DD349 /* RecipeModel.swift */; };
+		4794F126255B12DE009DD349 /* RecipeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794F125255B12DE009DD349 /* RecipeData.swift */; };
 		521DD8A02522576C00A741EB /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521DD89F2522576C00A741EB /* Auth.storyboard */; };
 		52506268252BA7ED0051E3D3 /* PocketChef.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52506266252BA7ED0051E3D3 /* PocketChef.xcdatamodeld */; };
 		527F74B32551B041002C8115 /* SwiftUIFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527F74B22551B041002C8115 /* SwiftUIFile.swift */; };
@@ -42,6 +45,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		47230433255B4EB500716EBE /* RecipeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCardView.swift; sourceTree = "<group>"; };
+		4794F11F255B1097009DD349 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
+		4794F125255B12DE009DD349 /* RecipeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeData.swift; sourceTree = "<group>"; };
 		521DD89F2522576C00A741EB /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		52506267252BA7ED0051E3D3 /* PocketChef.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PocketChef.xcdatamodel; sourceTree = "<group>"; };
 		527F74B22551B041002C8115 /* SwiftUIFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIFile.swift; sourceTree = "<group>"; };
@@ -122,10 +128,13 @@
 				52D4C6CA25470DC1004E5D1F /* AddPantryViewController.swift */,
 				F45370E6253E5D4000ADD9DC /* UserViewController.swift */,
 				52AA2A262518EA7200C25FCE /* Main.storyboard */,
+				4794F11F255B1097009DD349 /* RecipeModel.swift */,
+				4794F125255B12DE009DD349 /* RecipeData.swift */,
 				52AA2A292518EA7900C25FCE /* Assets.xcassets */,
 				52AA2A2B2518EA7900C25FCE /* LaunchScreen.storyboard */,
 				52AA2A2E2518EA7900C25FCE /* Info.plist */,
 				521DD89F2522576C00A741EB /* Auth.storyboard */,
+				47230433255B4EB500716EBE /* RecipeCardView.swift */,
 				527F74B22551B041002C8115 /* SwiftUIFile.swift */,
 			);
 			path = PocketChef;
@@ -288,6 +297,9 @@
 				52D4C6CB25470DC2004E5D1F /* AddPantryViewController.swift in Sources */,
 				52AA2A212518EA7200C25FCE /* AppDelegate.swift in Sources */,
 				52AA2A232518EA7200C25FCE /* SceneDelegate.swift in Sources */,
+				4794F120255B1097009DD349 /* RecipeModel.swift in Sources */,
+				47230434255B4EB500716EBE /* RecipeCardView.swift in Sources */,
+				4794F126255B12DE009DD349 /* RecipeData.swift in Sources */,
 				F4657BD8254BA5E3001BB299 /* ViewController3.swift in Sources */,
 				52506268252BA7ED0051E3D3 /* PocketChef.xcdatamodeld in Sources */,
 			);
