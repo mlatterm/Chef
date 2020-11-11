@@ -13,6 +13,8 @@ class RecipesViewCtrl: UIViewController {
 
     @IBOutlet weak var table: UITableView!
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     var recipes: [NSManagedObject] = []
     
     override func viewDidLoad() {
@@ -24,26 +26,28 @@ class RecipesViewCtrl: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-      super.viewWillAppear(animated)
-      
-      guard let appDelegate =
-        UIApplication.shared.delegate as? AppDelegate else {
-          return
+        super.viewWillAppear(animated)
+        
+        guard let appDelegate =
+          UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedContext =
+          appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest =
+          NSFetchRequest<NSManagedObject>(entityName: "Recipes")
+        
+        do {
+          recipes = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+          print("Could not fetch. \(error), \(error.userInfo)")
+        }
       }
-      
-      let managedContext =
-        appDelegate.persistentContainer.viewContext
 
-      let fetchRequest =
-        NSFetchRequest<NSManagedObject>(entityName: "Recipes")
-      
-      do {
-        recipes = try managedContext.fetch(fetchRequest)
-      } catch let error as NSError {
-        print("Could not fetch. \(error), \(error.userInfo)")
-      }
-    }
 
+    
   // Implement the addName IBAction
     @IBAction func addRecipe(_ sender: UIBarButtonItem) {
       
@@ -88,14 +92,14 @@ class RecipesViewCtrl: UIViewController {
         NSEntityDescription.entity(forEntityName: "Recipes",
                                    in: managedContext)!
       
-      let ingr = NSManagedObject(entity: entity,
+      let rec = NSManagedObject(entity: entity,
                                    insertInto: managedContext)
       
-      ingr.setValue(name, forKeyPath: "name")
+      rec.setValue(name, forKeyPath: "name")
       
       do {
         try managedContext.save()
-        recipes.append(ingr)
+        recipes.append(rec)
       } catch let error as NSError {
         print("Could not save. \(error), \(error.userInfo)")
       }
@@ -115,12 +119,20 @@ extension RecipesViewCtrl: UITableViewDataSource {
                  cellForRowAt indexPath: IndexPath)
                  -> UITableViewCell {
 
-    let Ingredient = recipes[indexPath.row]
+    let Recipes = recipes[indexPath.row]
     let cell =
       tableView.dequeueReusableCell(withIdentifier: "Cell",
                                     for: indexPath)
     cell.textLabel?.text =
-      Ingredient.value(forKeyPath: "name") as? String
+      Recipes.value(forKeyPath: "name") as? String
     return cell
   }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            recipes.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+        }
+    }
 }

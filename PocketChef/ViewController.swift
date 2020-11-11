@@ -13,12 +13,14 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tblView: UITableView!
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     var ingredients: [NSManagedObject] = []
     
     override func viewDidLoad() {
       super.viewDidLoad()
       
-      title = "My Pantry"
+      title = "Pantry"
       tblView.register(UITableViewCell.self,
         forCellReuseIdentifier: "Cell")
     }
@@ -124,6 +126,14 @@ extension ViewController: UITableViewDataSource {
       Ingredient.value(forKeyPath: "name") as? String
     return cell
   }
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            ingredients.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+        }
+    }
 }
 
 

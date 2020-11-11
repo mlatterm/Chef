@@ -17,6 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" image="MarbleBG" translatesAutoresizingMaskIntoConstraints="NO" id="MTH-bB-KFy">
+                                <rect key="frame" x="-179" y="-211.5" width="772" height="1319"/>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="bPq-QO-wvZ">
                                 <rect key="frame" x="81.5" y="325" width="251" height="246"/>
                             </imageView>
@@ -34,9 +37,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="bPq-QO-wvZ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="31P-X3-Yn9"/>
+                            <constraint firstItem="MTH-bB-KFy" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="3pY-LN-2rf"/>
                             <constraint firstItem="bPq-QO-wvZ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="8bl-Fz-Vtc"/>
                             <constraint firstItem="bPq-QO-wvZ" firstAttribute="top" secondItem="vmh-GW-mG4" secondAttribute="bottom" constant="75.5" id="DHz-ln-3fR"/>
                             <constraint firstItem="vmh-GW-mG4" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="LXm-iB-ixU"/>
+                            <constraint firstItem="MTH-bB-KFy" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="v9e-0I-IKf"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -46,6 +51,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="MarbleBG" width="772" height="1319"/>
         <image name="logo" width="250.5" height="245.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
