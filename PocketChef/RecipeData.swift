@@ -14,7 +14,7 @@ let recipesData: [Recipe] = [
     Recipe (
       title: "John’s Dank Egg Salad Recipe",
       headline: "Delicious egg salad made easy!",
-      image: "egg-saladSandwich",
+      image: "eggSaladSamwich",
       rating: 5,
       serves: 5,
       prepTime: 30,
