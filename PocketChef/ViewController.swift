@@ -104,6 +104,25 @@ class ViewController: UIViewController {
       }
     }
     
+    func deleteIngredients(offsets: IndexSet) {
+        for offset in offsets{
+            let oldIngr = ingredients[offset]
+            context.delete(oldIngr)
+        }
+        try? context.save()
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+              ingredients.remove(at: indexPath.row)
+//            managedObjectContext.deleteObject(ingredients)
+              tableView.deleteRows(at: [indexPath], with: .fade)
+          } else if editingStyle == .insert {
+              // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+          }
+      }
+
+    
 
 }
 
@@ -126,14 +145,6 @@ extension ViewController: UITableViewDataSource {
       Ingredient.value(forKeyPath: "name") as? String
     return cell
   }
-  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            ingredients.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-        }
-    }
 }
 
 
