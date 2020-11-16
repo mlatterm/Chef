@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct RecipesViewController: View {
     var body: some View {

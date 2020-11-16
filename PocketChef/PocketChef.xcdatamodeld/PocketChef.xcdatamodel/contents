@@ -12,11 +12,20 @@
         <relationship name="showRecipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recipes"/>
     </entity>
     <entity name="Recipes" representedClassName="Recipes" syncable="YES" codeGenerationType="class">
-        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="cookTime" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="headline" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="ingredients" optional="YES" attributeType="String"/>
+        <attribute name="instructions" optional="YES" attributeType="String"/>
+        <attribute name="prepTime" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="rating" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="serves" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="GroceryList" positionX="-52.89453125" positionY="123.1484375" width="128" height="88"/>
-        <element name="Ingredient" positionX="-122.8671875" positionY="18.75390625" width="104.05859375" height="103"/>
-        <element name="Recipes" positionX="8.3046875" positionY="34.31640625" width="128" height="58"/>
+        <element name="GroceryList" positionX="-52.89453125" positionY="123.1484375" width="128" height="28"/>
+        <element name="Ingredient" positionX="-122.8671875" positionY="18.75390625" width="104.05859375" height="88"/>
+        <element name="Recipes" positionX="8.3046875" positionY="34.31640625" width="128" height="28"/>
     </elements>
 </model>
