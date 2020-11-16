@@ -15,38 +15,29 @@ class RecipesViewCtrl: UIViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    var recipes: [NSManagedObject] = []
+    var recipes: [Recipes]?
     
     override func viewDidLoad() {
       super.viewDidLoad()
       
-      title = "Recipes"
-      table.register(UITableViewCell.self,
-        forCellReuseIdentifier: "Cell")
+        table.dataSource = self
+        table.delegate = self
+        
+        fetchRecipes()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        guard let appDelegate =
-          UIApplication.shared.delegate as? AppDelegate else {
-            return
+    func fetchRecipes() {
+        do{
+            self.recipes = try context.fetch(Recipes.fetchRequest())
+            
+            DispatchQueue.main.async {
+                self.table.reloadData()
+            }
         }
-        
-        let managedContext =
-          appDelegate.persistentContainer.viewContext
-        
-        let fetchRequest =
-          NSFetchRequest<NSManagedObject>(entityName: "Recipes")
-        
-        do {
-          recipes = try managedContext.fetch(fetchRequest)
-        } catch let error as NSError {
-          print("Could not fetch. \(error), \(error.userInfo)")
+        catch{
+            
         }
-      }
-
-
+    }
     
   // Implement the addName IBAction
     @IBAction func addRecipe(_ sender: UIBarButtonItem) {
@@ -55,84 +46,91 @@ class RecipesViewCtrl: UIViewController {
                                     message: "Enter name of a new Recipe",
                                     preferredStyle: .alert)
       
+        alert.addTextField()
+        
         let saveAction = UIAlertAction(title: "Save", style: .default) {
-          [unowned self] action in
+          action in
           
-          guard let textField = alert.textFields?.first,
-            let recipeToSave = textField.text else {
-              return
-          }
-          
-          self.save(name: recipeToSave)
-          self.table.reloadData()
+            let textfield = alert.textFields![0]
+            
+            let newRecipe = Recipes(context: self.context)
+            newRecipe.name = textfield.text
+            
+            try! self.context.save()
+            
+            self.fetchRecipes()
         }
-      
-      let cancelAction = UIAlertAction(title: "Cancel",
-                                       style: .cancel)
-      
-      alert.addTextField()
-      
-      alert.addAction(saveAction)
-      alert.addAction(cancelAction)
-      
-      present(alert, animated: true)
+        alert.addAction(saveAction)
+        self.present(alert, animated: true, completion: nil)
     }
-    
-    func save(name: String) {
-      
-      guard let appDelegate =
-        UIApplication.shared.delegate as? AppDelegate else {
-        return
-      }
-      
-      let managedContext =
-        appDelegate.persistentContainer.viewContext
-      
-      let entity =
-        NSEntityDescription.entity(forEntityName: "Recipes",
-                                   in: managedContext)!
-      
-      let rec = NSManagedObject(entity: entity,
-                                   insertInto: managedContext)
-      
-      rec.setValue(name, forKeyPath: "name")
-      
-      do {
-        try managedContext.save()
-        recipes.append(rec)
-      } catch let error as NSError {
-        print("Could not save. \(error), \(error.userInfo)")
-      }
-    }
-    
 
 }
 
 // MARK: - UITableViewDataSource
-extension RecipesViewCtrl: UITableViewDataSource {
+extension RecipesViewCtrl: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView,
                  numberOfRowsInSection section: Int) -> Int {
-    return recipes.count
+    return self.recipes?.count ?? 0
   }
 
   func tableView(_ tableView: UITableView,
-                 cellForRowAt indexPath: IndexPath)
-                 -> UITableViewCell {
-
-    let Recipes = recipes[indexPath.row]
+                 cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    table.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     let cell =
       tableView.dequeueReusableCell(withIdentifier: "Cell",
                                     for: indexPath)
-    cell.textLabel?.text =
-      Recipes.value(forKeyPath: "name") as? String
+    
+    let Recipes = self.recipes![indexPath.row]
+    
+    cell.textLabel?.text = Recipes.name
     return cell
   }
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            recipes.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let rec = self.recipes![indexPath.row]
+        
+        let alert = UIAlertController(title: "Edit Recipe Name", message: "Edit:", preferredStyle: .alert)
+        alert.addTextField()
+        
+        let textfield = alert.textFields![0]
+        textfield.text = rec.name
+        
+        let saveButton = UIAlertAction(title: "Save", style: .default) { (action) in
+            let textfield = alert.textFields![0]
+            
+            rec.name = textfield.text
+            
+            do{
+                try self.context.save()
+            }catch{
+                
+            }
+            
+            self.fetchRecipes()
         }
+        
+        alert.addAction(saveButton)
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completionHandler) in
+            
+            let recipeToRemove = self.recipes![indexPath.row]
+            
+            self.context.delete(recipeToRemove)
+            
+            do{
+                try self.context.save()
+            }catch{
+                
+            }
+            
+            self.fetchRecipes()
+        }
+        return UISwipeActionsConfiguration(actions: [action])
     }
 }

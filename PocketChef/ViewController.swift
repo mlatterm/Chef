@@ -15,136 +15,117 @@ class ViewController: UIViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    var ingredients: [NSManagedObject] = []
+    var ingredients: [Ingredient]?
     
     override func viewDidLoad() {
       super.viewDidLoad()
       
-      title = "Pantry"
-      tblView.register(UITableViewCell.self,
-        forCellReuseIdentifier: "Cell")
+        tblView.dataSource = self
+        tblView.delegate = self
+        
+        fetchIngredients()
+        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-      super.viewWillAppear(animated)
-      
-      guard let appDelegate =
-        UIApplication.shared.delegate as? AppDelegate else {
-          return
-      }
-      
-      let managedContext =
-        appDelegate.persistentContainer.viewContext
-
-      let fetchRequest =
-        NSFetchRequest<NSManagedObject>(entityName: "Ingredient")
-      
-      do {
-        ingredients = try managedContext.fetch(fetchRequest)
-      } catch let error as NSError {
-        print("Could not fetch. \(error), \(error.userInfo)")
-      }
+    func fetchIngredients() {
+        do{
+            self.ingredients = try context.fetch(Ingredient.fetchRequest())
+            
+            DispatchQueue.main.async {
+                self.tblView.reloadData()
+            }
+        }
+        catch{
+            
+        }
     }
-
     
     // Implement the addName IBAction
-    @IBAction func addIngredient(_ sender: UIBarButtonItem) {
+    @IBAction func addIngredient(_ sender: UIBarButtonItem) { //sender: Any
       
       let alert = UIAlertController(title: "New Ingredient",
                                     message: "Add a new ingredient",
                                     preferredStyle: .alert)
+        alert.addTextField()
       
-        let saveAction = UIAlertAction(title: "Save", style: .default) {
-          [unowned self] action in
+        let submitButton = UIAlertAction(title: "Add", style: .default) {
+          action in
           
-          guard let textField = alert.textFields?.first,
-            let ingredientToSave = textField.text else {
-              return
-          }
-          
-          self.save(name: ingredientToSave)
-          self.tblView.reloadData()
+            let textfield = alert.textFields![0]
+            
+            let newIngredient = Ingredient(context: self.context)
+            newIngredient.name = textfield.text
+            newIngredient.amount = 10
+            newIngredient.unitOfMeasure = "pounds"
+            
+            try! self.context.save()
+            
+            self.fetchIngredients()
         }
-      
-      let cancelAction = UIAlertAction(title: "Cancel",
-                                       style: .cancel)
-      
-      alert.addTextField()
-      
-      alert.addAction(saveAction)
-      alert.addAction(cancelAction)
-      
-      present(alert, animated: true)
+        alert.addAction(submitButton)
+        self.present(alert, animated: true, completion: nil)
     }
-    
-    func save(name: String) {
-      
-      guard let appDelegate =
-        UIApplication.shared.delegate as? AppDelegate else {
-        return
-      }
-      
-      let managedContext =
-        appDelegate.persistentContainer.viewContext
-      
-      let entity =
-        NSEntityDescription.entity(forEntityName: "Ingredient",
-                                   in: managedContext)!
-      
-      let ingr = NSManagedObject(entity: entity,
-                                   insertInto: managedContext)
-      
-      ingr.setValue(name, forKeyPath: "name")
-      
-      do {
-        try managedContext.save()
-        ingredients.append(ingr)
-      } catch let error as NSError {
-        print("Could not save. \(error), \(error.userInfo)")
-      }
-    }
-    
-    func deleteIngredients(offsets: IndexSet) {
-        for offset in offsets{
-            let oldIngr = ingredients[offset]
-            context.delete(oldIngr)
-        }
-        try? context.save()
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-              ingredients.remove(at: indexPath.row)
-//            managedObjectContext.deleteObject(ingredients)
-              tableView.deleteRows(at: [indexPath], with: .fade)
-          } else if editingStyle == .insert {
-              // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-          }
-      }
-
-    
 
 }
-
-// MARK: - UITableViewDataSource
-extension ViewController: UITableViewDataSource {
-  func tableView(_ tableView: UITableView,
-                 numberOfRowsInSection section: Int) -> Int {
-    return ingredients.count
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return self.ingredients?.count ?? 0
   }
 
-  func tableView(_ tableView: UITableView,
-                 cellForRowAt indexPath: IndexPath)
-                 -> UITableViewCell {
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    tblView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+    
+    let ingredient = self.ingredients![indexPath.row]
 
-    let Ingredient = ingredients[indexPath.row]
-    let cell =
-      tableView.dequeueReusableCell(withIdentifier: "Cell",
-                                    for: indexPath)
-    cell.textLabel?.text =
-      Ingredient.value(forKeyPath: "name") as? String
+    cell.textLabel?.text = ingredient.name
     return cell
   }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let ingredient = self.ingredients![indexPath.row]
+        
+        let alert = UIAlertController(title: "Edit Ingredient", message: "Edit:", preferredStyle: .alert)
+        alert.addTextField()
+        
+        let textfield = alert.textFields![0]
+        textfield.text = ingredient.name
+        
+        let saveButton = UIAlertAction(title: "Save", style: .default) { (action) in
+            let textfield = alert.textFields![0]
+            
+            ingredient.name = textfield.text
+            
+            do{
+                try self.context.save()
+            }catch{
+                
+            }
+            
+            self.fetchIngredients()
+        }
+        
+        alert.addAction(saveButton)
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completionHandler) in
+            
+            let ingredientToRemove = self.ingredients![indexPath.row]
+            
+            self.context.delete(ingredientToRemove)
+            
+            do{
+                try self.context.save()
+            }catch{
+                
+            }
+            
+            self.fetchIngredients()
+        }
+        return UISwipeActionsConfiguration(actions: [action])
+    }
 }
-
-

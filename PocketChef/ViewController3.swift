@@ -9,85 +9,35 @@
 import UIKit
 import CoreData
 
-class ViewController3: UIViewController, UITableViewDelegate {
-    func tableView(_ tableView: UITableView,
-                   numberOfRowsInSection section: Int) -> Int {
-        return items!.count
-    }
+class ViewController3: UIViewController {
 
-    func tableView(_ tableView: UITableView,
-                   cellForRowAt indexPath: IndexPath)
-                   -> UITableViewCell {
-
-        let Item = items![indexPath.row]
-      let cell =
-        tableView.dequeueReusableCell(withIdentifier: "Cell",
-                                      for: indexPath)
-      cell.textLabel?.text =
-        Item.value(forKeyPath: "name") as? String
-      return cell
-    }
+    @IBOutlet weak var tablView: UITableView!
     
-
-    @IBOutlet weak var tableview: UITableView!
-    //Reference to managed object context
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    //Data for the table
-    var items:[Ingredient]?
-//    var items: [NSManagedObject] = []
     
+    var groceries: [GroceryList]?
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-
-        tableview.dataSource = self
-        tableview.delegate = self
-
-        //Get items from Core data
-        fetchIngredient()
+      super.viewDidLoad()
+      
+        tablView.dataSource = self
+        tablView.delegate = self
+        
+        fetchGroceries()
     }
-    func fetchIngredient() {
-        // Fetch the data from core data to display in the tableview
+    
+    func fetchGroceries() {
         do{
-            self.items = try context.fetch(Ingredient.fetchRequest())
+            self.groceries = try context.fetch(GroceryList.fetchRequest())
             
             DispatchQueue.main.async {
-                self.tableview.reloadData()
+                self.tablView.reloadData()
             }
         }
         catch{
-
+            
         }
     }
-
-//    override func viewDidLoad() {
-//      super.viewDidLoad()
-//
-//      title = "My Grocery List"
-//      tableview.register(UITableViewCell.self,
-//        forCellReuseIdentifier: "Cell")
-//    }
-//
-//    override func viewWillAppear(_ animated: Bool) {
-//      super.viewWillAppear(animated)
-//
-//      guard let appDelegate =
-//        UIApplication.shared.delegate as? AppDelegate else {
-//          return
-//      }
-//
-//      let managedContext =
-//        appDelegate.persistentContainer.viewContext
-//
-//      let fetchRequest =
-//        NSFetchRequest<NSManagedObject>(entityName: "GroceryList")
-//
-//      do {
-//        items = try managedContext.fetch(fetchRequest)
-//      } catch let error as NSError {
-//        print("Could not fetch. \(error), \(error.userInfo)")
-//      }
-//    }
     
     @IBAction func addTapped(_ sender:UIBarButtonItem){
         //create alert
@@ -96,21 +46,15 @@ class ViewController3: UIViewController, UITableViewDelegate {
         alert.addTextField()
         
         //configure button handler
-        let submitButton = UIAlertAction(title:"Add",style: .default){ [unowned self] action in //(action) in
-            
-            // get the textfield for the alert
+        let submitButton = UIAlertAction(title:"Add",style: .default){ action in
             
             let textfield = alert.textFields![0]
 
             //create a ingredient object
 
-            let newIngredient = Ingredient(context: self.context)
-            newIngredient.name = textfield.text
-            newIngredient.amount = 20
-            newIngredient.unitOfMeasure = "pounds"
-
-//            save the data
-
+            let newGrocery = GroceryList(context: self.context)
+            newGrocery.name = textfield.text
+            
             do{
                 try self.context.save()
             }
@@ -118,120 +62,52 @@ class ViewController3: UIViewController, UITableViewDelegate {
 
             }
             // re-fetch the data
-            self.fetchIngredient()
-            
-//            guard let textField = alert.textFields?.first,
-//              let ingredientToSave = textField.text else {
-//                return
-//            }
-//
-//            self.save(name: ingredientToSave)
-//            self.tableview.reloadData()
-//
-//        }
+            self.fetchGroceries()
+        }
         //add button
-//        alert.addAction(submitButton)
-
+        alert.addAction(submitButton)
         //show alert
         self.present(alert, animated: true, completion: nil)
 
     }
-        
-//        let cancelAction = UIAlertAction(title: "Cancel",
-//                                         style: .cancel)
-//
-//        alert.addTextField()
-//
-//        alert.addAction(submitButton)
-//        alert.addAction(cancelAction)
-//
-//        present(alert, animated: true)
-//      }
-      
-//      func save(name: String) {
-//
-//        guard let appDelegate =
-//          UIApplication.shared.delegate as? AppDelegate else {
-//          return
-//        }
-//
-//        let managedContext =
-//          appDelegate.persistentContainer.viewContext
-//
-//        let entity =
-//          NSEntityDescription.entity(forEntityName: "GroceryList",
-//                                     in: managedContext)!
-//
-//        let ingr = NSManagedObject(entity: entity,
-//                                     insertInto: managedContext)
-//
-//        ingr.setValue(name, forKeyPath: "name")
-//
-//        do {
-//          try managedContext.save()
-//          items.append(ingr)
-//        } catch let error as NSError {
-//          print("Could not save. \(error), \(error.userInfo)")
-//        }
-//      }
       
 
   }
-}
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension ViewController3: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView:UITableView, numberOfRowsInSection section:Int) -> Int{
+        //return the number of people
+        return self.groceries?.count ?? 0
     }
-    */
 
-extension ViewController3: UITableViewDataSource{
-    
-//    func tableView(_ tableView:UITableView, numberOfRowsInSection section:Int) -> Int{
-//        //return the number of people
-//        return self.items?.count ?? 0
-//    }
-//
-//    func tableView(_ tableView:UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-//        //Get ingredient from array and set the label
-//        let ingredient = self.items![indexPath.row]
-//        cell.textLabel?.text = ingredient.name
-//
-//        return cell
-//    }
-    
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            items.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//        } else if editingStyle == .insert {
-//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-//        }
-//    }
+    func tableView(_ tableView:UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        //Get ingredient from array and set the label
+        let rec = self.groceries![indexPath.row]
+        cell.textLabel?.text = rec.name
+        return cell
+    }
 
     func tableView(_ tableView: UITableView,didSelectRowAt indexPath:IndexPath){
         //Selected Ingredient
-        let ingredient = self.items![indexPath.row]
+        let groc = self.groceries![indexPath.row]
 
         //Create alert
-        let alert = UIAlertController(title: "Edit Ingredient", message: "Edit Name", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Edit Item", message: "Edit Name", preferredStyle: .alert)
         alert.addTextField()
 
         let textfield = alert.textFields![0]
-        textfield.text = ingredient.name
+        textfield.text = groc.name
 
         //Configure button handler
-
-        _ = UIAlertAction(title: "Save", style: .default){ (action) in
+        let saveButton = UIAlertAction(title: "Save", style: .default){ (action) in
           //get the textfield for the alert
             let textfield = alert.textFields![0]
 
             //edit name property of ingredient object
-            ingredient.name = textfield.text
+            groc.name = textfield.text
 
             //save the data
             do{
@@ -241,21 +117,22 @@ extension ViewController3: UITableViewDataSource{
 
             }
             //re-fetch the data
-            self.fetchIngredient()
+            self.fetchGroceries()
         }
+        alert.addAction(saveButton)
+        
+        self.present(alert, animated: true, completion: nil)
     }
 
-    func tableView(_ tableView: UITableView, trailingSwipeActionConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?{
-
-
-            //create swipe action
-
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?{
+            
+        //create swipe action
         let action = UIContextualAction(style: .destructive, title: "Delete") { (acction,view, completionHandler) in
             // which ingredient to remove
-            let ingredientToRemove = self.items![indexPath.row]
+            let itemToRemove = self.groceries![indexPath.row]
 
             //remove the ingredient
-            self.context.delete(ingredientToRemove)
+            self.context.delete(itemToRemove)
 
             //save the data
             do{
@@ -263,15 +140,10 @@ extension ViewController3: UITableViewDataSource{
             }
             catch{
             }
-
             // re-fetch data
-            self.fetchIngredient()
+            self.fetchGroceries()
         }
-
             // return swipe actions
             return UISwipeActionsConfiguration(actions: [action])
-
-
         }
-    
 }
