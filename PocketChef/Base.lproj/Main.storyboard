@@ -12,7 +12,7 @@
         <!--Kitchen-->
         <scene sceneID="frA-Tu-7xv">
             <objects>
-                <viewController title="Kitchen" id="JKi-xV-Wzb" sceneMemberID="viewController">
+                <viewController title="Kitchen" id="JKi-xV-Wzb" customClass="KitchenView" customModule="PocketChef" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zNu-aq-FB5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,6 +53,9 @@
                             <barButtonItem image="magnifyingglass" catalog="system" id="jof-sh-zRr"/>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="recipeView" destination="rzp-9d-DHW" id="ZGq-O1-Rcn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="COY-8t-wR9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

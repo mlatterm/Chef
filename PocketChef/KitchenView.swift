@@ -11,5 +11,7 @@ import CoreData
 
 class KitchenView: UIViewController{
     
+    @IBOutlet weak var recipeView: UITextView!
+    
 }
 

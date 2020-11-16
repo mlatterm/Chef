@@ -127,6 +127,7 @@
 				52AA2A242518EA7200C25FCE /* ViewController.swift */,
 				527F74CA2551B115002C8115 /* RecipesViewCtrl.swift */,
 				F4657BD7254BA5E3001BB299 /* ViewController3.swift */,
+				5210F4D02562EF720054C6D4 /* KitchenView.swift */,
 				52D4C6CA25470DC1004E5D1F /* AddPantryViewController.swift */,
 				F45370E6253E5D4000ADD9DC /* UserViewController.swift */,
 				52AA2A262518EA7200C25FCE /* Main.storyboard */,
@@ -138,7 +139,6 @@
 				521DD89F2522576C00A741EB /* Auth.storyboard */,
 				47230433255B4EB500716EBE /* RecipeCardView.swift */,
 				527F74B22551B041002C8115 /* SwiftUIFile.swift */,
-				5210F4D02562EF720054C6D4 /* KitchenView.swift */,
 			);
 			path = PocketChef;
 			sourceTree = "<group>";
