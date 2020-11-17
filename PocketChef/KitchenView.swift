@@ -13,5 +13,28 @@ class KitchenView: UIViewController{
     
     @IBOutlet weak var recipeView: UITextView!
     
+    
+    @IBAction func showRecipe(_ sender: Any) {
+        recipeView.isHidden = false
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        recipeView.isHidden = true
+        
+        
+        //create if else with all the recipe code if(tblView includes eggs){}
+        
+//        if Ingredient.fetchRequest().contains ("eggs"){
+//
+//            recipeView.text = ""
+//        }else{}
+        
+        recipeView.text = "No recipe available.\nPlease come back later."
+        
+
+    }
 }
+
 

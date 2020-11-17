@@ -54,7 +54,7 @@ class RecipesViewCtrl: UIViewController {
             let textfield = alert.textFields![0]
             
             let newRecipe = Recipes(context: self.context)
-            newRecipe.name = textfield.text
+            newRecipe.title = textfield.text
             
             try! self.context.save()
             
@@ -83,7 +83,7 @@ extension RecipesViewCtrl: UITableViewDelegate, UITableViewDataSource {
     
     let Recipes = self.recipes![indexPath.row]
     
-    cell.textLabel?.text = Recipes.name
+    cell.textLabel?.text = Recipes.title
     return cell
   }
     
@@ -94,12 +94,12 @@ extension RecipesViewCtrl: UITableViewDelegate, UITableViewDataSource {
         alert.addTextField()
         
         let textfield = alert.textFields![0]
-        textfield.text = rec.name
+        textfield.text = rec.title
         
         let saveButton = UIAlertAction(title: "Save", style: .default) { (action) in
             let textfield = alert.textFields![0]
             
-            rec.name = textfield.text
+            rec.title = textfield.text
             
             do{
                 try self.context.save()
